@@ -222,4 +222,9 @@ img:active {
 	h2 {
 		font-size: 2rem;
 	}
+
+	.button-82-pushable {
+		position: absolute;
+		bottom: 10%;
+	}
 }
