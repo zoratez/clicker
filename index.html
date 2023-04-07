@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" media="screen">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dekko&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        var count = 0;
+        const rollSound = new Audio("disturbed.mp3");
+        rollSound.loop = true;
+        $('.button-82-pushable').click(e => rollSound.play());
+        // rollSound.loop = true;
+        $(document).ready(function () {
+            $("img").click(function () {
+                count++;
+                $("p").html(count);
+                click.play;
+            })
+        });
+        function myFunction() {
+            $("h2").css("color", "#e2e2e2");
+            $('body').css("background-color", "#2a2d35");
+            $('#toggleTwo').show();
+            $('#toggle').hide();
+        }
+        function myFunctionTwo() {
+            $("h2").css("color", "black");
+            $('body').css("background-color", "#cdcdcd");
+            $('#toggleTwo').hide();
+            $('#toggle').show();
+        }
+
+        function myFunctionThree() {
+            rollSound.play();
+            $('#button').hide();
+            $('#buttonTwo').show();
+            interval = setInterval(callMe, 30);
+            function callMe() {
+                count++;
+                $("p").html(count);
+            }
+        }
+        function myFunctionFour() {
+            $('#buttonTwo').hide();
+            $('#button').show();
+            clearInterval(interval);
+            rollSound.pause();
+            rollSound.currentTime = 0;
+
+        }
+    </script>
+    <title>Clicker</title>
+</head>
+
+<body>
+    <button onclick="myFunction()" id="toggle" class="btn-toggle">🌑</button>
+    <button onclick="myFunctionTwo()" id="toggleTwo" class="btn-toggle" hidden>🔅</button>
+    <section>
+        <h2 id="font">Liczba kliknięć:</h2>
+        <p>0</p>
+    </section>
+
+    <div class="click">
+        <img src="golebiewski.svg" alt="">
+    </div>
+
+    <button class="button-82-pushable" role="button" id="button" onclick="myFunctionThree()">
+        <span class="button-82-shadow"></span>
+        <span class="button-82-edge"></span>
+        <span class="button-82-front text">
+            Wam się nie chce, to i mi się nie chce
+        </span>
+    </button>
+
+    <button class="button-82-pushable" role="button" id="buttonTwo" hidden onclick="myFunctionFour()">
+        <span class="button-82-shadow"></span>
+        <span class="button-82-edge"></span>
+        <span class="button-82-front text">
+            Stop stop stop
+        </span>
+    </button>
+
+</body>
+
+</html>
